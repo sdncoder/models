@@ -1,0 +1,58 @@
+name: a_plane.yml
+
+topology:
+  nodes:
+    snj:
+      kind: cvx
+      image: networkop/cx:4.3.0
+      runtime: docker
+      binds:
+        - snj/interfaces:/etc/network/interfaces 
+    lsa:
+      kind: cvx
+      image: networkop/cx:4.3.0
+      runtime: docker
+      binds:
+        - lsa/interfaces:/etc/network/interfaces
+    dnv:
+      kind: cvx
+      image: networkop/cx:4.3.0
+      runtime: docker
+      binds:
+        - dnv/interfaces:/etc/network/interfaces
+    ltt: 
+      kind: cvx
+      image: networkop/cx:4.3.0
+      runtime: docker
+      binds:
+        - ltt/interfaces:/etc/network/interfaces  
+    dal:                                            
+      kind: cvx                                     
+      image: networkop/cx:4.3.0                     
+      runtime: docker                               
+      binds:                                        
+        - dal/interfaces:/etc/network/interfaces    
+    hou:                                            
+      kind: cvx                                 
+      image: networkop/cx:4.3.0                 
+      runtime: docker                           
+      binds:                                    
+        - hou/interfaces:/etc/network/interfaces 
+    chi:                                            
+      kind: cvx                                     
+      image: networkop/cx:4.3.0                     
+      runtime: docker                               
+      binds:                                        
+        - chi/interfaces:/etc/network/interfaces
+
+  links:
+    - endpoints: ["snj:swp5", "dnv:swp5"]
+    - endpoints: ["snj:swp6", "ltt:swp6"]
+    - endpoints: ["lsa:swp7", "dnv:swp7"]
+    - endpoints: ["lsa:swp13", "ltt:swp13"]
+    - endpoints: ["lsa:swp14", "hou:swp14"]
+    - endpoints: ["dnv:swp8", "ltt:swp8"]       
+    - endpoints: ["ltt:swp9", "dal:swp9"]       
+    - endpoints: ["dal:swp11", "hou:swp11"]
+    - endpoints: ["chi:swp12", "dnv:swp12"]       
+    - endpoints: ["chi:swp10", "dal:swp10"]          

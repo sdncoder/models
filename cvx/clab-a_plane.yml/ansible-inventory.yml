@@ -1,0 +1,18 @@
+all:
+  children:
+    cvx:
+      hosts:
+        clab-a_plane.yml-chi:
+          ansible_host: 172.20.20.5
+        clab-a_plane.yml-dal:
+          ansible_host: 172.20.20.6
+        clab-a_plane.yml-dnv:
+          ansible_host: 172.20.20.2
+        clab-a_plane.yml-hou:
+          ansible_host: 172.20.20.4
+        clab-a_plane.yml-lsa:
+          ansible_host: 172.20.20.8
+        clab-a_plane.yml-ltt:
+          ansible_host: 172.20.20.7
+        clab-a_plane.yml-snj:
+          ansible_host: 172.20.20.3
