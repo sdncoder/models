@@ -1,0 +1,22 @@
+all:
+  children:
+    linux:
+      hosts:
+        clab-sr-frr-ash:
+          ansible_host: 172.20.20.3
+        clab-sr-frr-atl:
+          ansible_host: 172.20.20.10
+        clab-sr-frr-chi:
+          ansible_host: 172.20.20.4
+        clab-sr-frr-dal:
+          ansible_host: 172.20.20.6
+        clab-sr-frr-dnv:
+          ansible_host: 172.20.20.5
+        clab-sr-frr-hou:
+          ansible_host: 172.20.20.8
+        clab-sr-frr-lsa:
+          ansible_host: 172.20.20.7
+        clab-sr-frr-ltt:
+          ansible_host: 172.20.20.9
+        clab-sr-frr-snj:
+          ansible_host: 172.20.20.2

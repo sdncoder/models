@@ -1,0 +1,12 @@
+isisd=yes
+bgpd=yes
+ldpd=yes
+bfdd=yes
+pathd=yes
+vtysh_enable=yes
+isisd_options="  --daemon -A 127.0.0.1"
+ldpd_options="  --daemon -A 127.0.0.1"
+zebra_options=" -s 90000000 --daemon -A 127.0.0.1"
+bgpd_options="   --daemon -A 127.0.0.1"
+bfdd_options="  --daemon -A 127.0.0.1"
+pathd_options="  --daemon -A 127.0.0.1"

@@ -1,0 +1,73 @@
+name: sr-frr
+
+topology:
+  nodes:
+    snj:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - snj/daemons:/etc/frr/daemons
+        - snj/frr.conf:/etc/frr/frr.conf
+    lsa:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - lsa/daemons:/etc/frr/daemons
+        - lsa/frr.conf:/etc/frr/frr.conf
+    dnv:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - dnv/daemons:/etc/frr/daemons
+        - dnv/frr.conf:/etc/frr/frr.conf
+    ltt:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - ltt/daemons:/etc/frr/daemons
+        - ltt/frr.conf:/etc/frr/frr.conf
+    dal:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - dal/daemons:/etc/frr/daemons
+        - dal/frr.conf:/etc/frr/frr.conf
+    hou:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - hou/daemons:/etc/frr/daemons
+        - hou/frr.conf:/etc/frr/frr.conf
+    chi:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - chi/daemons:/etc/frr/daemons
+        - chi/frr.conf:/etc/frr/frr.conf
+    atl:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - atl/daemons:/etc/frr/daemons
+        - atl/frr.conf:/etc/frr/frr.conf
+    ash:                                
+      kind: linux                       
+      image: frrouting/frr:v8.1.0       
+      binds:                            
+        - ash/daemons:/etc/frr/daemons  
+        - ash/frr.conf:/etc/frr/frr.conf
+  links:
+    - endpoints: ["snj:eth5", "dnv:eth5"]
+    - endpoints: ["snj:eth6", "ltt:eth6"]
+    - endpoints: ["dnv:eth8", "ltt:eth8"]
+    - endpoints: ["dnv:eth7", "lsa:eth7"]
+    - endpoints: ["dnv:eth12", "chi:eth12"]
+    - endpoints: ["ltt:eth9", "dal:eth9"]
+    - endpoints: ["ltt:eth13", "lsa:eth13"]
+    - endpoints: ["dal:eth11", "hou:eth11"]
+    - endpoints: ["hou:eth14", "lsa:eth14"]
+    - endpoints: ["dal:eth10", "chi:eth10"]
+    - endpoints: ["atl:eth15", "chi:eth15"]
+    - endpoints: ["atl:eth16", "dal:eth16"]
+    - endpoints: ["ash:eth17", "chi:eth17"]
+    - endpoints: ["ash:eth18", "atl:eth18"]
