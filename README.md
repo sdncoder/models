@@ -16,10 +16,8 @@ mpls_router            40960  0
 ip_tunnel              32768  1 mpls_router
 ```
 
-
-sudo docker exec -it clab-sr-frr-dal sysctl -w net.mpls.platform_labels=30000
-
 verify sysctl
 -------------
 sysctl -a | grep mpls
+
 
