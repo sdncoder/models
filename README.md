@@ -1,7 +1,8 @@
 Free Range Routing - ISIS Segment Routing 
 
+<div style="width: 60%; height = 60%>
 ![Screenshot](sr-frr-diagram.png)
-
+</div>
 
 verify mpls modules location
 ----------------------------
