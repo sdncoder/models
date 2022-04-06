@@ -1,5 +1,5 @@
 Free Range Routing - ISIS Segment Routing 
-![Screenshot](sr-frr-diagram.png)
+![Screenshot](frr-topo.png)
 
 verify mpls modules location
 ----------------------------
