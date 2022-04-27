@@ -1,0 +1,8 @@
+all:
+  children:
+    linux:
+      hosts:
+        clab-isp-bgp-bb1:
+          ansible_host: 172.20.20.2
+        clab-isp-bgp-bb2:
+          ansible_host: 172.20.20.3
