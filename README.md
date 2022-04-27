@@ -10,6 +10,24 @@ Model allows label switching, implicit/explicit null testing, and node/link fail
 
 ![Screenshot](isp-bgp.png)
 
+ | node a | node b | subnet |
+ |--------|--------|--------|
+ | bb1    | bb2    |        |
+ | bb1    | p1a    |        |
+ | bb1    | p2a    |        |
+ | bb2    | p1b    |        |
+ | bb2    | p2b    |        |
+ | p1a    | e1     |        |
+ | p2a    | e2     |        |
+ | w1     | e1     |        |
+ | w1     | e2     |        |
+ | e1     | e2     |        |
+ | p1b    | e3     |        |
+ | p2b    | e3     |        |
+ | w2     | e3     |        |
+ | w2     | e4     |        |
+ | e3     | e4     |        |
+ | w1     | w2     |        |
 
 
 
