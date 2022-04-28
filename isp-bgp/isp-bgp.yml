@@ -14,5 +14,18 @@ topology:
       binds:
         - bb2/daemons:/etc/frr/daemons
         - bb2/frr.conf:/etc/frr/frr.conf
+    w1:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - w1/daemons:/etc/frr/daemons
+        - w1/frr.conf:/etc/frr/frr.conf
+    w2:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - w2/daemons:/etc/frr/daemons
+        - w2/frr.conf:/etc/frr/frr.conf        
   links:
     - endpoints: ["bb1:eth5", "bb2:eth5"]
+    - endpoints: ["w1:eth5", "w2:eth5"]
