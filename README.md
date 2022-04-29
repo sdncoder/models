@@ -41,8 +41,6 @@ start modules and verify
 $ sudo modprobe mpls_router
 $ lsmod | grep mpls
 mpls_router            40960  0
-ip_tunnel              32768  1 mpls_router
-```
 
 verify sysctl
 -------------
