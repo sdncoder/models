@@ -25,7 +25,38 @@ topology:
       image: frrouting/frr:v8.1.0
       binds:
         - w2/daemons:/etc/frr/daemons
-        - w2/frr.conf:/etc/frr/frr.conf        
+        - w2/frr.conf:/etc/frr/frr.conf
+    e1:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - e1/daemons:/etc/frr/daemons
+        - e1/frr.conf:/etc/frr/frr.conf
+    e2:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - e2/daemons:/etc/frr/daemons
+        - e2/frr.conf:/etc/frr/frr.conf
+    p1a:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - p1a/daemons:/etc/frr/daemons
+        - p1a/frr.conf:/etc/frr/frr.conf
+    p2a:
+      kind: linux
+      image: frrouting/frr:v8.1.0
+      binds:
+        - p2a/daemons:/etc/frr/daemons
+        - p2a/frr.conf:/etc/frr/frr.conf
   links:
     - endpoints: ["bb1:eth5", "bb2:eth5"]
     - endpoints: ["w1:eth5", "w2:eth5"]
+    - endpoints: ["bb1:eth2", "p1a:eth2"]
+    - endpoints: ["p1a:eth1", "e1:eth1"]
+    - endpoints: ["e1:eth2", "w1:eth2"]
+    - endpoints: ["w1:eth3", "e2:eth3"]
+    - endpoints: ["e1:eth4", "e2:eth4"]
+    - endpoints: ["p2a:eth3", "bb1:eth3"]
+    - endpoints: ["e2:eth1", "p2a:eth1"]

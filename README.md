@@ -29,6 +29,9 @@ Model allows label switching, implicit/explicit null testing, and node/link fail
  | e3     | e4     |  10.20.10.8.30  |
  | w1     | w2     |  10.0.0.0/30    |
 
+frr ebgp default behavior is to require a policy-map for route advertisements.  
+disable this with `no bgp ebgp-requires-policy`  
+
 
 
 
