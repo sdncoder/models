@@ -1,6 +1,6 @@
 ### Free Range Routing
 Containerlab FRR builds use this WAN  topology.  
-![Screenshot](frr-topo.png)
+#![Screenshot](frr-topo.png)
 
 #### IS-IS Segment Routing lab  - _sr-frr.yml_
 IS-IS with SR MPLS and TI-LFA build `/sr-frr/sr-frr.yml`  
